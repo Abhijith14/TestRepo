@@ -9,7 +9,7 @@ url = "https://www.skyscanner.net"  # Replace with the URL you want to scrape
 
 options = webdriver.ChromeOptions()
 
-options.add_argument('--disable-extensions')
+# options.add_argument('--disable-extensions')
 options.add_argument('--headless')
 
 
@@ -17,6 +17,9 @@ driver = webdriver.Chrome(options=options)  # Replace with the path to your chro
 
 driver.get(url)
 # bypass bot page
+
+# Enable JavaScript
+driver.execute_script("return navigator.userAgent")
 
 # Wait for the cookie dialog to appear and then click the "OK" button
 try:
